@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shop_app/screens/forgot_pasword/forgot_password_screen.dart';
 import 'package:shop_app/screens/login_success/login_success_screen.dart';
 import 'package:shop_app/screens/sign_in/sign_in_screen.dart';
+import 'package:shop_app/screens/sign_up/sign_up_scree.dart';
 import 'package:shop_app/screens/splash/splash_screen.dart';
 
 final Map<String, WidgetBuilder> routes = {
@@ -9,4 +10,5 @@ final Map<String, WidgetBuilder> routes = {
   SignInScreen.routeName: (context) => SignInScreen(),
   ForgotPasswordScreen.routeName: (context) => ForgotPasswordScreen(),
   LoginSuccessScreen.routeName: (context) => LoginSuccessScreen(),
+  SignUpScreen.routeName: (context) => SignUpScreen(),
 };

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shop_app/size_config.dart';
 
-class SocialContainer extends StatelessWidget {
+class SocialCard extends StatelessWidget {
   final String svgIcon;
   final VoidCallback press;
-  const SocialContainer({
+  const SocialCard({
     super.key,
     required this.svgIcon,
     required this.press,

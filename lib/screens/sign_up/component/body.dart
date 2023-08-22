@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/screens/sign_in/components/sign_form.dart';
-import 'package:shop_app/components/social_card.dart';
+import 'package:shop_app/screens/sign_up/component/sign_up_form.dart';
 import 'package:shop_app/size_config.dart';
 
-import '../../../components/no_account_text.dart';
+import '../../../components/social_card.dart';
 
 class Body extends StatelessWidget {
   const Body({super.key});
@@ -13,27 +12,27 @@ class Body extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: getProportionateScreenWidth(20),
-        ),
+        padding:
+            EdgeInsets.symmetric(horizontal: getProportionateScreenHeight(20)),
         child: SingleChildScrollView(
           child: Column(
             children: [
               SizedBox(height: SizeConfig.screenHeight! * 0.04),
               Text(
-                "Welcome Back",
+                "Register Account",
                 style: TextStyle(
                   fontSize: getProportionateScreenWidth(28),
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
+                  height: 1.5,
                 ),
               ),
               const Text(
-                "Sign in with email and password \nor continue with social media",
+                "Complete you details or continue \nwith social media.",
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: SizeConfig.screenHeight! * 0.08),
-              const SignForm(),
+              const SignUpForm(),
               SizedBox(height: SizeConfig.screenHeight! * 0.08),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -53,7 +52,10 @@ class Body extends StatelessWidget {
                 ],
               ),
               SizedBox(height: getProportionateScreenHeight(20)),
-              const NoAccountText(),
+              const Text(
+                "By continuing your confirm that you agree \nwith our term and condition",
+                textAlign: TextAlign.center,
+              ),
             ],
           ),
         ),

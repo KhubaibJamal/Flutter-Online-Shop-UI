@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/components/no_account_text.dart';
 
-import '../../../components/custom_siffix_icon.dart';
+import '../../../components/custom_suffix_icon.dart';
 import '../../../components/default_button.dart';
 import '../../../components/form_error.dart';
 import '../../../constant.dart';

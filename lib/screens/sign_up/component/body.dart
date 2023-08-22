@@ -3,6 +3,7 @@ import 'package:shop_app/screens/sign_up/component/sign_up_form.dart';
 import 'package:shop_app/size_config.dart';
 
 import '../../../components/social_card.dart';
+import '../../../constant.dart';
 
 class Body extends StatelessWidget {
   const Body({super.key});
@@ -13,19 +14,14 @@ class Body extends StatelessWidget {
       width: double.infinity,
       child: Padding(
         padding:
-            EdgeInsets.symmetric(horizontal: getProportionateScreenHeight(20)),
+            EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
         child: SingleChildScrollView(
           child: Column(
             children: [
               SizedBox(height: SizeConfig.screenHeight! * 0.04),
               Text(
                 "Register Account",
-                style: TextStyle(
-                  fontSize: getProportionateScreenWidth(28),
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                  height: 1.5,
-                ),
+                style: headingStyle,
               ),
               const Text(
                 "Complete you details or continue \nwith social media.",

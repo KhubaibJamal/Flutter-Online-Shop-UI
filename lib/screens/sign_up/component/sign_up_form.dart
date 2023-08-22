@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../components/custom_siffix_icon.dart';
+import 'package:shop_app/screens/complete_profile/complete_profile_screen.dart';
+import '../../../components/custom_suffix_icon.dart';
 import '../../../components/default_button.dart';
 import '../../../components/form_error.dart';
 import '../../../constant.dart';
@@ -53,9 +54,9 @@ class _SignUpFormState extends State<SignUpForm> {
           DefaultButton(
             text: "Continue",
             press: () {
-              if (_formKey.currentState!.validate()) {
-                _formKey.currentState!.save();
-              }
+              Navigator.pushNamed(context, CompleteProfileScreen.routeName);
+              // if (_formKey.currentState!.validate()) {
+              // }
             },
           ),
         ],
@@ -69,18 +70,15 @@ class _SignUpFormState extends State<SignUpForm> {
         confirmPassword = newValue!;
       },
       onChanged: (value) {
-        if (value.isNotEmpty) {
-          removeError(error: kPasswordNullError);
-        } else if (value.isNotEmpty && password == confirmPassword) {
+        if (password == confirmPassword) {
           removeError(error: kMatchPasswordError);
         }
-        confirmPassword = value;
+        // confirmPassword = value;
       },
       validator: (value) {
         if (value!.isEmpty) {
-          addError(error: kPasswordNullError);
           return "";
-        } else if ((password != value)) {
+        } else if (password != value) {
           addError(error: kMatchPasswordError);
           return "";
         }

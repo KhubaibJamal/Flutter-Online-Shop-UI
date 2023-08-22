@@ -25,6 +25,22 @@ class SignFormState extends State<SignForm> {
 
   bool isRemember = false;
 
+  void addError({String? error}) {
+    if (!errors.contains(error)) {
+      setState(() {
+        errors.add(error!);
+      });
+    }
+  }
+
+  void removeError({String? error}) {
+    if (errors.contains(error)) {
+      setState(() {
+        errors.remove(error);
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -85,28 +101,22 @@ class SignFormState extends State<SignForm> {
         password = newValue!;
       },
       onChanged: (value) {
-        if (value.isNotEmpty && errors.contains(kPasswordNullError)) {
-          setState(() {
-            errors.remove(kPasswordNullError);
-          });
-        } else if (value.length >= 8 && errors.contains(kShortPassError)) {
-          setState(() {
-            errors.remove(kShortPassError);
-          });
+        if (value.isNotEmpty) {
+          removeError(error: kPasswordNullError);
+        } else if (value.length >= 8) {
+          removeError(error: kShortPassError);
         }
         return;
       },
       validator: (value) {
-        if (value!.isEmpty && !errors.contains(kPasswordNullError)) {
-          setState(() {
-            errors.add(kPasswordNullError);
-          });
-        } else if (value.length < 8 && !errors.contains(kShortPassError)) {
-          setState(() {
-            errors.add(kShortPassError);
-          });
+        if (value!.isEmpty) {
+          addError(error: kPasswordNullError);
+          return "";
+        } else if (value.length < 8) {
+          addError(error: kShortPassError);
+          return "";
         }
-        return;
+        return null;
       },
       obscureText: true,
       decoration: const InputDecoration(

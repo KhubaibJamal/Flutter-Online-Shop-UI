@@ -17,7 +17,7 @@ class DefaultButton extends StatelessWidget {
       width: double.infinity,
       child: InkWell(
         onTap: press,
-        child: Container(
+        child: Ink(
           decoration: BoxDecoration(
             color: kPrimaryColor,
             borderRadius: BorderRadius.circular(12),

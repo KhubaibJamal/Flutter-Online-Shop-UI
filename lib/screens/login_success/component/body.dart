@@ -18,7 +18,7 @@ class Body extends StatelessWidget {
         ),
         SizedBox(height: SizeConfig.screenHeight! * 0.08),
         Text(
-          "Forgot Password",
+          "Login Success",
           style: TextStyle(
             fontSize: getProportionateScreenWidth(28),
             fontWeight: FontWeight.bold,

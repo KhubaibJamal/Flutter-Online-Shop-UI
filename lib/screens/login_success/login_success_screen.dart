@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shop_app/screens/login_success/component/body.dart';
 
 class LoginSuccessScreen extends StatelessWidget {
-  static String routeName = "login_success";
+  static String routeName = "/login_success";
 
   @override
   Widget build(BuildContext context) {

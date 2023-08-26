@@ -5,7 +5,7 @@ import 'package:shop_app/screens/details/component/body.dart';
 import 'component/custom_app_bar.dart';
 
 class DetailsScreen extends StatelessWidget {
-  static String routeName = "details_screen";
+  static String routeName = "/details_screen";
 
   const DetailsScreen({super.key});
 

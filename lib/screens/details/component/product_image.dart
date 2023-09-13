@@ -23,7 +23,10 @@ class _ProductImageState extends State<ProductImage> {
           width: getProportionateScreenWidth(238),
           child: AspectRatio(
             aspectRatio: 1,
-            child: Image.asset(widget.product.images[selectedImage]),
+            child: Hero(
+              tag: widget.product.id.toString(),
+              child: Image.asset(widget.product.images[selectedImage]),
+            ),
           ),
         ),
         Row(
